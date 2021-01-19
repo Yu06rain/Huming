@@ -1,3 +1,66 @@
+# テーブル設計
+
+## users テーブル
+
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| password           | string | null: false |
+
+### Association
+
+- has_many :tweets
+- has_many :originals
+- has_many :comments
+
+## originals テーブル
+
+| Column            | Type       | Options     |
+| ----------------- | ---------- | ----------- |
+| title             | string     | null: false |
+| impression        | text       | null: false |
+| hardship          | text       | null: false |
+| insistence        | text       | null: false |
+| period            | string     | null: false |
+| language          | string     | null: false |
+| website           | text       | null: false |
+| environment       | string     | null: false |
+| user              | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many :comments
+
+## tweets テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| text             | text       | null: false                    |
+| user             | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many :comments
+
+## comments テーブル
+
+| Column        | Type       | Options     |
+| ------------- | ---------- | ----------- |
+| comment       | text       | null: false |
+| user          | references | null: false, foreign_key: true |
+| tweet         | references | null: false, foreign_key: true |
+| original      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :tweet
+- belongs_to :original
+
+
 ## アプリケーション名
 Huming
 
@@ -10,7 +73,7 @@ Huming
 ツイート機能を実装することで自分にとっても日々の進捗を簡単に呟くことができ、他人にとってもその人がどんなアプリケーションを作成しようとしているのか把握しやすくなるからです。
 またフォロー機能も実装してより開発者同士が繋がりやすくして、日々のオリジナルアプリの開発でお互いのアウトプットや疑問点解決に活かすことが出来るようにしたいと考えております。
 
-質問機能も実装する予定です。
+また質問機能も実装する予定です。
 一人でアプリを開発する上でエラー等が生じても基本的に自力で解決する必要があり、解決までに時間を要することも多々あるかと思います。
 そんな時に日々のツイートの延長で簡単に質問出来る機能があれば、一人では大変なオリジナルアプリの開発もある程度緩和されるのではないかと考えました。
 日々進捗をツイートしていれば他人から見てもその人が作っているアプリケーションの全体像が把握しやすくなり、結果として回答も得られやすくなると考えています。
@@ -19,8 +82,10 @@ Huming
 プログラマー同士が繋がりやすい当アプリであれば、開発者同士で質問しやすい環境が出来る為、この課題もある程度解消出来ると考えています。
 
 ## URL
+デプロイ次第記入
 
 ## テスト用アカウント
+ログイン機能実装後記入
 
 ## 利用方法
 TOPページからまずはユーザー登録をする必要があります。
@@ -40,7 +105,7 @@ TOPページからまずはユーザー登録をする必要があります。
 
 １、プログラマーが自分で作ったオリジナルアプリを開発工程を踏まえて詳細に公開出来るサービスがあれば便利ではないか
 ２、プログラマー同士がもっと繋がりやすいアプリケーションがあれば便利ではないか
-３、既存のteratail等の質問サイトはエラーが起こった箇所を部分的に記載して事細かく事情を説明してから質問するのは煩わしく、もっとお手軽に質問出来るサービスがあれば便利ではないか
+３、既存の質問サイトはエラーが起こった箇所を部分的に記載して事細かく事情を説明してから質問するのは煩わしく、もっとお手軽に質問出来るサービスがあれば便利ではないか
 ４、プログラミング学習サイトなどでは得られない、他のプログラマーのオリジナルアプリの開発過程、その中で得た実用的な情報を手軽に見られるサービスがあれば便利ではないか
 
 ## 洗い出した要件
@@ -48,10 +113,13 @@ TOPページからまずはユーザー登録をする必要があります。
 ユーザー管理機能、ツイート投稿機能、ツイート一覧表示機能、ツイート詳細表示機能、ツイート情報編集機能、ツイート削除機能、質問投稿機能、質問一覧表示機能、質問詳細表示機能、質問編集機能、質問削除機能、アプリ紹介文投稿機能、アプリ紹介文編集機能、アプリ紹介文詳細表示機能、アプリ紹介文編集機能、アプリ紹介文削除機能、コメント投稿機能、コメント編集機能、コメント削除機能、コード投稿機能、フォロー機能、いいね機能、検索機能
 
 ## 実装した機能についての説明
+機能実装後記入
 
 ## 実装予定の機能
+未定
 
 ## データベース設計
-https://gyazo.com/891b95df1be27fc4258cc7d04751dbfd
+https://gyazo.com/3669f7da651247c9ae2831f2dd1ec83d
 
 ## ローカルでの動作方法
+機能実装後記入
