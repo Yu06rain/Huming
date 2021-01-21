@@ -1,2 +1,113 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" media="all" href="css/tweets.scss">
+</head>
+
+<body>
+
+<nav id="mainnav">
+	<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+	<div class="panel">
+	<div class="container">
+		<p class="logo"><%= image_tag "logo2.png" %></p>
+  <input type="text" placeholder="Search...">
+  <div class="search"></div>
+</div>
+		<ul>
+			<li><a href="#header">TOP</a></li>
+			<li><a href="#sec01">ログイン</a></li>
+			<li><a href="" class="btn btn-border-shadow btn-border-shadow--color2"><span class="new-color">無料新規登録</span></a>
+	</div>
+</nav>
+
+<header id="header">
+	<%= image_tag "main2.jpg" %>
+	<div id="slogan">
+		<h1>Huming</h1>
+		<h2>プログラミングで多くの人と繋がろう</h2>
+	</div>
+</header>
+
+<!-- VISION -->
+<section id="sec01">
+	<header>
+		<h2>Humingとは</h2>
+	</header>
+	<div class="vision">
+		
+	</div>
+</section>
+<!-- // VISION -->
+
+<!-- MESSAGE -->
+<section id="sec02">
+	<div class="wrap">
+		<p class="bg"><%= image_tag "top2.jpg" %></p>
+		<div class="txt">
+			<div class="vMid">
+				<h2>プログラミングで繋がる</h2>
+				<p>Humingはプログラミングを勉強している方が集まるコミュニケーションアプリです！
+				<br>今までありそうでなかった・・・プログラミングを勉強されている方同士が繋がり、気軽に意見交換出来るツイッター形式のアプリです！
+				<br>日々色んなプログラマーの意見を取り入れることであなたのプログラミングの世界も広がること間違いなし！
+				<br>無料で簡単に新規登録出来るので、あなたも是非Humingの世界に飛び込んでみましょう！</p>
+			</div>
+		</div>
+	</div>
+	<div id="sec02_02" class="wrap">
+		<p class="bg"><%= image_tag "game2.jpg" %></p>
+		<div class="txt">
+			<div class="vMid">
+				<h2>オリジナルアプリを共有しよう</h2>
+				<p>このアプリでは自分の作ったオリジナルアプリを他のユーザーに紹介することが出来ます！
+				<br>初めてアプリを作ってみたけど、自分のアプリを紹介する場所がない・・・
+				<br>自分の作ったアプリの構成を誰かに見て欲しい・・・
+				<br>そんな時は是非このアプリを使ってあなたのアイデアを共有してみましょう！
+				<br>また他のユーザーの作成したオリジナルアプリを見ることも出来ます！
+				<br>参考になるアプリも見つかるかも・・・？</p>
+			</div>
+		</div>
+	</div>
+	<div class="wrap">
+		<p class="bg"><%= image_tag "img11.jpg" %></p>
+		<div class="txt">
+			<div class="vMid">
+				<h2>質問をもっとお手軽に</h2>
+				<p>プログラミングを勉強し始めたけどコードの意味が分からない・・・
+				<br>オリジナルアプリを作成していてエラーが出ても質問出来る人がいない・・・
+				<br>そんな時はHumimgで同じプログラミングを学習している仲間に聞いてみましょう！
+				<br>今までの質問サイトとは違ってツイート感覚で簡単に質問出来ます！
+				<br>普通の学習サイトでは身に付きづらいアプリを開発する上で重要な実用的な知識も、他のユーザーと意見交換することでより効率よくインプットすることが出来ます！</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- // MESSAGE -->
+
+<!-- SERVICE -->
+<section id="sec03">
+	<div class="inner">
+		<ul class="col3">
+			<li>
+				<h2>登録無料！</h2>
+				<%= image_tag "cat.jpg" %>
+				<p class="neko">1分で簡単登録！今すぐ始めてみよう！</p>
+			</li>
+			<li>
+				<h2>簡単に質問</h2>
+				<%= image_tag "cat2.jpg" %>
+				<p class="neko2">ツイート感覚で簡単に質問出来るよ！</p>
+			</li>
+			<li>
+				<h2>コード投稿も</h2>
+				<%= image_tag "cat3.jpg" %>
+				<p class="neko3">コードを載せて皆と相談しちゃおう！</p>
+			</li>
+		</ul>
+	</div>
+</section>
+<!-- // SERVICE -->
+</body>
+<%= render "shared/footer" %>
+</html>
